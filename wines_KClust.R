@@ -1,6 +1,8 @@
+#Including the libraries
 library(plyr)
 library(animation)
 wine <- read.csv(file.choose())
+
 View(wine)
 wdata<-wine[,-1]
 attach(wdata)
