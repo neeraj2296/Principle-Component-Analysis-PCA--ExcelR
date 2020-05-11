@@ -1,20 +1,23 @@
+#Including Libraries
 library(plyr)
 library(animation)
+#Importing and Editing the Data for the algorithm
 wine <- read.csv(file.choose())
 View(wine)
 wdata<-wine[,-1]
 attach(wdata)
 cor(wdata)
+#Applying the principle Component Analysis Algorithm 
 pcaobj1<-princomp(wdata, cor = TRUE, scores = TRUE, covmat = NULL)
 
+#Visualising the data set after passing through the algorithm
 str(pcaobj1)
 summary(pcaobj1)
 loadings(pcaobj1)
-
 plot(pcaobj1)
-
 biplot(pcaobj1)
 
+#Viewing the output
 #pcaObj$loadingspcaobj
 pcaobj1$scores[,1:4]# Top 3 PCA Scores which represents the whole data
 # cbind used to bind the data in column wise
